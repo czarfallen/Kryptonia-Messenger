@@ -28,15 +28,11 @@
 
 
   </button> 
-  <div padding text-center>
-    <button ion-button color="dark" 
-      full>Create Group
-    </button>       
-</div>
+ 
 </ion-list>
 
-  <ion-fab right bottom [ngClass] ="{'FabConactive' : fabActive()}">
-    <button ion-fab color="dark" ><ion-icon name="ios-arrow-round-forward-outline"></ion-icon></button>
+  <ion-fab right bottom [ngClass] ="{'FabConactive' : fabActive()}" >
+    <button ion-fab color="dark" (click)="CreateGroup()"><ion-icon name="ios-arrow-round-forward-outline"></ion-icon></button>
   </ion-fab>
 
 </ion-content>

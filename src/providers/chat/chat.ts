@@ -12,15 +12,13 @@ export class ChatProvider {
     
   }
 
-  messageChatList(user_id:string){
+  messageChatList(user_id){
   return this.utilty.getMethod('ActiveUsers/' + user_id);
   }
 
   friendsList(){
   return this.utilty.getMethod('ActiveUsers/0');
   }
-
-
 
   getPersonalMessages(chatid, offset){
     return this.utilty.getMethod('MessageDecription/'+ chatid +'/'+offset);
@@ -30,13 +28,20 @@ export class ChatProvider {
     return this.utilty.getMethod('groupMessageDescription/'+ chatid +'/'+offset);
   }
 
-
-  sendMessage(message: string,reciever: string, sender: string,userid: string){
-    return this.utilty.postMethod('sendMessage',{message:message,reciever:reciever,sender:sender,userid:userid});
+  sendMessage(message,reciever,sender,userid){
+    return this.utilty.postMethod('sendMessage',{message,reciever,sender,userid});
   }
 
-  sendGroupMessage(message: string,reciever:string,sender:string){
-    return this.utilty.postMethod('sendGroupMessage',{message:message,reciever:reciever,sender:sender});
+  sendGroupMessage(message,reciever,sender){
+    return this.utilty.postMethod('sendGroupMessage',{message,reciever,sender});
+  }
+
+  createGroupMessage(name,userId,member){
+    return this.utilty.postMethod('createGroupChat',{name,userId,member});
+  }
+
+  deleteConversation(chatid){
+    return this.utilty.postMethod('removeConversation',{chatid});
   }
 
 }

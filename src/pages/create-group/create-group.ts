@@ -13,13 +13,15 @@ export class CreateGroupPage {
   userId;
   friendsList:any = [];
   Group:any = [];
+  groupname;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private Chats: ChatProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private Chats: ChatProvider,public util : UtilityProvider) {
   this.userId = this.navParams.get('userId'); 
+  
 
     this.Chats.friendsList().subscribe((friends)=>{
 
-    friends['offline'].forEach(element => {
+        friends['offline'].forEach(element => {
         this.friendsList.push({
           name: element['name'],
           user_id: element['user_id'],
@@ -64,4 +66,19 @@ export class CreateGroupPage {
     }
     
   }
+
+ test(){
+ 
+ }
+  CreateGroup(){
+    this.Chats.createGroupMessage(this.groupname,this.Group,this.userId).subscribe(response => {
+     
+    });
+    this.util.ToastMessage(this.groupname+' has been created.');
+    this.groupname = '';
+    this.Group = [];
+  }
+
+
+
 }

@@ -39,7 +39,7 @@
             <ion-list-header>
                 Group Chat
               </ion-list-header>
-          <button ion-item *ngFor="let user of ChatAvailable" no-lines>
+          <button ion-item *ngFor="let user of ChatAvailable" no-lines (click)="groupMessageDetails(user.gid)">
             <ion-avatar item-start>
               <img src="../assets/imgs/user.png">
             </ion-avatar>

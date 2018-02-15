@@ -12,6 +12,7 @@ export class ChatlistPage {
 
   user:string;
   chatHeadsContent:any = [];
+  chatHeadear: any = [];
 
   constructor(
     public navParams: NavParams,
@@ -19,11 +20,15 @@ export class ChatlistPage {
     private Chats: ChatProvider) {
     this.user = this.navParams.get('userId');
     
+  }
+
+  display(){
     let parseItem: string;
-    let chatHeadear: any = [];
-    let chatids: string;
-    
+    this.chatHeadear = [];
+    this.chatHeadsContent = [];
+    let chatids: string;    
     this.Chats.messageChatList(this.user).subscribe((details)=>{
+    
       details['chatHeads'].forEach(element => {
 
             element[0]['mess'].forEach(message => {
@@ -34,8 +39,8 @@ export class ChatlistPage {
               chatids = parseItem['sender']+'_'+parseItem['receiver'];
               }
 
-              if(chatHeadear.indexOf(chatids) < 0){
-                chatHeadear.push(chatids);            
+              if(this.chatHeadear.indexOf(chatids) < 0){
+                this.chatHeadear.push(chatids);            
                 this.chatHeadsContent.push({
                  name: element[0]['name'][0]['name'],
                  chatid: chatids,
@@ -49,8 +54,12 @@ export class ChatlistPage {
             });
       });
    
-
+     
     });
+  }
+
+  ionViewWillEnter(){
+    this.display();
   }
 
   personalMsg(chatid,sender,rcvr){
@@ -61,5 +70,12 @@ export class ChatlistPage {
       rcvr:rcvr
       });
   }
+
+  removeConversation(chatId){
+    this.Chats.deleteConversation(chatId).subscribe(Response=>{
+      console.log(Response);
+    });  
+  }
   
+
 }
