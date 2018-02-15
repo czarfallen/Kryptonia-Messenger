@@ -1,0 +1,35 @@
+// http://ionicframework.com/docs/theming/
+
+ion-menu{
+    ion-content{
+        background: linear-gradient(to left, #0a0a0a 10%, #374141 150%) !important;
+     color: white !important;
+    }
+   }
+.item-md{
+    background: linear-gradient(to left, #0a0a0a 10%, #374141 150%) !important;
+    color: white !important;;
+}
+.toast-md .toast-wrapper{
+    background: #222;
+    margin-bottom: 30px; 
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    max-width: 360px;
+    border-radius: 7px;
+}
+.toast-md .toast-message{
+    color: #863232;
+}
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.

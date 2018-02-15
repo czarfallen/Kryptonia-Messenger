@@ -1,0 +1,35 @@
+page-group-messages {
+    .left-span{
+        //background-color:  #32db64;
+        background: #32db64 !important;
+        display: inline-block !important;
+        color: white !important;
+        padding: 10px !important;
+        border-radius: 10px !important;
+        text-align: left !important;
+        max-width: 240px !important;
+    }
+    .toolbar-content{
+        display: flex;
+    } 
+    .right-span {
+        background: #007AFF !important;
+        display: inline-block !important;
+        color: white !important;
+        padding: 10px !important;
+        border-radius: 10px !important;
+        text-align: left !important;
+        max-width: 240px !important;
+      }
+
+      ion-menu{
+        ion-content{
+            background:white !important;
+         color: white !important;
+        }
+       }
+    .item-md{
+        background: white !important;
+        color: white !important;
+    }
+}

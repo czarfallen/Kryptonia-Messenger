@@ -1,0 +1,20 @@
+page-create-group {
+    ion-menu{
+        ion-content{
+            background:white !important;
+         color: black !important;
+        }
+       }
+    .item-md{
+        background: white !important;
+        color: black !important;
+        padding: 0px 10px 0px 10px;
+    }
+    .active {
+        background: #488aff !important;
+    }
+
+    .FabConactive{
+        display: none;
+    }
+}

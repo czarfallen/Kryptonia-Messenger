@@ -1,0 +1,52 @@
+
+<ion-header>
+
+  <ion-navbar>
+  
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+
+    <ion-list>
+        <ion-list-header>
+            Online Friends
+          </ion-list-header>
+      <button ion-item *ngFor="let user of UserAvailableOnline" no-lines (click)="personalMsg(user.chatid,user.sender,user.receiver)">
+        <ion-avatar item-start>
+          <img src="../assets/imgs/user.png">
+        </ion-avatar>
+        <p>{{user.name}}  <ion-icon name="checkmark-circle" float-right color="secondary"></ion-icon><p>
+      </button>     
+    </ion-list>
+  
+  
+             <ion-list>
+                <ion-list-header>
+                    Offline Friends
+                  </ion-list-header>
+              <button ion-item *ngFor="let user of UserAvailableOffline" no-lines (click)="personalMsg(user.chatid,user.sender,user.receiver)">
+                <ion-avatar item-start>
+                  <img src="../assets/imgs/user.png">
+                </ion-avatar>
+                <p>{{user.name}}  <ion-icon name="checkmark-circle" float-right></ion-icon><p>
+              </button>     
+            </ion-list>
+  
+  
+          <ion-list>
+            <ion-list-header>
+                Group Chat
+              </ion-list-header>
+          <button ion-item *ngFor="let user of ChatAvailable" no-lines>
+            <ion-avatar item-start>
+              <img src="../assets/imgs/user.png">
+            </ion-avatar>
+            <p>{{user.name}}  <ion-icon name="checkmark-circle" float-right color="secondary"></ion-icon><p>
+          </button>     
+        </ion-list>
+        
+        
+
+</ion-content>

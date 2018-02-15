@@ -1,0 +1,17 @@
+<ion-header class="background">
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="ios-settings-outline"></ion-icon>
+    </button>
+    <ion-searchbar animated="true" placeholder="Search...">      
+    </ion-searchbar>
+  </ion-navbar>
+</ion-header>
+
+<ion-tabs tabsPlacement="top" color="dark">
+  <ion-tab [root]="tab1Root" [rootParams]="{ userId: userId }" tabIcon="ios-chatbubbles"  tabTitle="Messages"></ion-tab>
+  <ion-tab [root]="tab2Root" [rootParams]="{ userId: userId }" tabIcon="md-contacts" tabTitle="Group"></ion-tab>
+  <ion-tab [root]="tab3Root" [rootParams]="{ userId: userId }" tabIcon="ios-contact" tabTitle="Friends"></ion-tab>
+</ion-tabs>
+
+

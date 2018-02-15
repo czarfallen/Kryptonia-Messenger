@@ -1,0 +1,30 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>groupchat</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+    <ion-list>
+          
+        <button ion-item *ngFor="let group of groupName" (click)="groupMessageDetails(group.Gid)" no-lines>
+
+          <ion-avatar item-start>
+            <img src="../assets/imgs/user.png">
+          </ion-avatar>
+          <p>{{group.Gname}}</p>            
+        </button>     
+      </ion-list>
+
+
+
+    <ion-fab right bottom>
+        <button ion-fab color="dark" (click)="startGroupChat()"><ion-icon name="ios-chatboxes"></ion-icon></button>
+      
+      </ion-fab>
+</ion-content>

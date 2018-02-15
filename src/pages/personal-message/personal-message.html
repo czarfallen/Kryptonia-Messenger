@@ -1,0 +1,40 @@
+
+<ion-header>
+
+  <ion-navbar>
+  
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-list>
+          
+    <button ion-item *ngFor="let message of MesDetails" no-lines>
+
+      <ion-avatar item-end *ngIf="message.sender == user" class="right-span">
+          <!-- <img src="../assets/imgs/user.png"> -->
+        <span>{{message.message}}</span>
+      </ion-avatar>
+
+      <ion-avatar item-start *ngIf="message.sender != user" class="left-span">
+          <!-- <img src="../assets/imgs/user.png"> -->
+          <span>{{message.message}}</span>
+        </ion-avatar>
+
+    </button>     
+  </ion-list>
+  
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+      <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+
+
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+   <ion-input type="text" [(ngModel)]="chatmessage"></ion-input>
+   <button ion-button icon-only (click)="SendMessage()"><ion-icon name="ios-send"></ion-icon></button>
+  </ion-toolbar>
+</ion-footer>

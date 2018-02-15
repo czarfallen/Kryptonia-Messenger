@@ -1,0 +1,42 @@
+
+<ion-header>
+
+  <ion-navbar>
+   
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-list>
+  <ion-list-header>
+      <ion-input type="text" [(ngModel)]="groupname" placeholder="Group Name"></ion-input>
+    </ion-list-header>
+  
+  <button ion-item *ngFor="let user of friendsList;" no-lines (click)="addToGroup(user.user_id)" 
+   [ngClass] ="{'active' : isActive(user.user_id)}" >
+    
+    <ion-avatar item-start >
+      <img src="../assets/imgs/user.png">
+    </ion-avatar>
+    <p>{{user.name}}  
+      <ion-icon name="checkmark-circle" float-right [color]="user.active == 1 ? 'secondary' : 'none'"></ion-icon>
+    <p>
+
+  
+
+
+  </button> 
+  <div padding text-center>
+    <button ion-button color="dark" 
+      full>Create Group
+    </button>       
+</div>
+</ion-list>
+
+  <ion-fab right bottom [ngClass] ="{'FabConactive' : fabActive()}">
+    <button ion-fab color="dark" ><ion-icon name="ios-arrow-round-forward-outline"></ion-icon></button>
+  </ion-fab>
+
+</ion-content>

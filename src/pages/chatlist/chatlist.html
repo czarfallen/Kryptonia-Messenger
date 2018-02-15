@@ -1,0 +1,33 @@
+
+<ion-header>
+
+  <ion-navbar>
+  
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+    <div>
+        <ion-list>
+          
+            <button ion-item *ngFor="let message of chatHeadsContent;" no-lines (click)="personalMsg(message.chatid,message.sender,message.receiver)">
+
+              <ion-avatar item-start>
+                <img src="../assets/imgs/user.png">
+              </ion-avatar>
+              <p>{{message.name}}</p>            
+            </button>     
+          </ion-list>
+    </div>
+
+<ion-fab right bottom>
+        <button ion-fab color="dark"><ion-icon name="ios-add-circle-outline"></ion-icon></button>
+        <ion-fab-list side="top">
+          <button ion-fab><ion-icon name="ios-create"></ion-icon></button>
+         
+        </ion-fab-list>
+      </ion-fab>
+
+</ion-content>

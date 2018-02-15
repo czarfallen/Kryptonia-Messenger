@@ -1,0 +1,28 @@
+<ion-content>
+  
+    <div id="fade" text-center padding class="logo" style="position:relative">
+        <img src="../assets/imgs/kryptonia-logo-transparent-bg.png" alt="No image"> 
+        <h5 class="messnger-text">Messenger</h5>  
+    </div>
+
+  <div id="login-content">
+    
+        <ion-item>
+          <ion-label stacked>Email</ion-label>
+          <ion-input type="text" [(ngModel)]="email"></ion-input>
+        </ion-item>
+      
+        <ion-item >
+          <ion-label stacked >Password</ion-label>
+          <ion-input type="password" class="password" [(ngModel)]="password"></ion-input>
+        </ion-item>
+       
+        <div padding text-center>
+            <button ion-button color="dark" 
+              full (click)="login()">Login
+            </button>       
+        </div>
+
+  </div>
+
+</ion-content>
